@@ -1,9 +1,9 @@
 <?php
-$platos = [ 
+$platos = [
     [//esto es la posicion 0
-        "plato"=>"filete con arroz",
+        "nombre"=>"filete con arroz",
         "comensales" => 2,
-        "tipo plato" => "segundo",
+        "tipo" => "segundo",
         "ingredientes" => [
             [
                 "nombre" => "arroz",
@@ -16,33 +16,33 @@ $platos = [
         ]
     ],
     [
-        "plato"=>"pollo asado",
+        "nombre"=>"pollo asado",
         "comensales" => 5,
-        "tipo plato" => "segundo",
-        "ingredientes" =>[
+        "tipo" => "segundo",
+        "ingredientes" => [
+            [
                 "nombre" => "pollo",
                 "cantidad" => "2 Kg"
-            ],[
+            ],
+            [
                 "nombre" => "patata",
                 "cantidad" =>"200 g"
             ],
-        
+        ]
     ],
     [
-        "plato"=> "ensalada",
+        "nombre"=> "ensalada",
         "comensales" => 4,
-        "tipo plato" => "primero",
+        "tipo" => "primero",
         "ingredientes" => [
             [
                 "nombre" => "lechuga",
                 "cantidad" => "200 g"
             ],
-            
             [
                 "nombre" => "tomate",
                 "cantidad" => "5 g"
-            ],
-            
+            ],            
         ],
     ]
 ];
@@ -50,27 +50,21 @@ $platos = [
 
 // echo $platos[2]['ingredientes'][0][0]; //lechuga asi tiene que ser la ruta 
 //echo $platos[2]["ingredientes"][0]["nombre"];//si me esta dando
-
+echo '<pre>' . PHP_EOL;
 foreach ($platos as $plato) {
     
-    echo $plato["plato"];
-    echo $plato["comensales"];
-    echo $plato["tipo plato"];
+    echo 'PLATO' . PHP_EOL;
+    $nombreP = $plato["nombre"];
+    echo $plato["nombre"] . PHP_EOL;
+    echo $plato["comensales"] . PHP_EOL;
+    echo $plato["tipo"] . PHP_EOL;
+    foreach($plato["ingredientes"] as $ingrediente){
+        echo '    ' . $ingrediente["nombre"] . PHP_EOL;
+        echo '    ' . $ingrediente["cantidad"] . PHP_EOL;
+    }
 
-    
-}//esto no me pinta lo que yo quiero  
+    echo PHP_EOL;
+}
 
+echo '<pre/>' . PHP_EOL;
 
-?>
-
-<!-- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-        <h1> <?php echo $platos ?> </h1> 
-</body>
-</html> -->
